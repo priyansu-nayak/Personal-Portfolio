@@ -4,6 +4,12 @@
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useEffect, useState } from 'react';
 import { Nav, Navbar, Container } from 'react-bootstrap';
+import logo from '../assets/img/logo.svg';
+import navIcon1 from '../assets/img/nav-icon.svg';
+import logo from '../assets/img/logo.svg';
+import logo from '../assets/img/logo.svg';
+
+
 
 const NavBar = () => {
 
@@ -26,6 +32,12 @@ const NavBar = () => {
 
         }, [])
 
+    const onUpdateActiveLink = (value) => {
+        setActiveLink(value);
+    }
+
+
+
 
 
     return (
@@ -40,9 +52,9 @@ const NavBar = () => {
 
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home" className={activeLink === 'home' ? 'active-navbar-link' : 'navbar-link'}>Home</Nav.Link>
-                        <Nav.Link href="#skills">Skills</Nav.Link>
-                        <Nav.Link href="#projects">Projects</Nav.Link>
+                        <Nav.Link href="#home" className={activeLink === 'home' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')} >Home</Nav.Link>
+                        <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')} >Skills</Nav.Link>
+                        <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')} >Projects</Nav.Link>
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
